@@ -2,7 +2,8 @@ import { Todo } from './todo.class'
 
 export class TodoList{
     constructor(){
-        this.todos=[];
+        // this.todos=[];
+        this.cargarLocalStorage();
     }
 
     nuevoTodo(todo){
@@ -20,7 +21,7 @@ export class TodoList{
 
         for(const todo of this.todos){
             if(todo.id==id){
-                todo.completado=!todo.completado;
+                todo.completado = !todo.completado;
                 this.guardarLocalStorage();
                 break;
             }
@@ -29,7 +30,7 @@ export class TodoList{
     }
 
     eliminarCompletados(){
-        this.todos.filter(todo => !todo.completado)
+        this.todos = this.todos.filter( todo => !todo.completado )
         this.guardarLocalStorage();
     }
 
@@ -49,7 +50,7 @@ export class TodoList{
         // }else{
         //     this.todos=[];
         // }
-        this.todos=this.todos.map(Todo.fromJson);
+        this.todos = this.todos.map( Todo.fromJson );
 
     }
 }
