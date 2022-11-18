@@ -1,21 +1,28 @@
-export class Todo{
+export class Todo {
 
-    static frontJson({id, tarea, completado, creado}){
-        const tempTodo=new Todo(tarea);
+    static fromJson({ id, tarea, completado, creado }) {
 
-        tempTodo.id=id;
-        tempTodo.completado=completado;
-        tempTodo.creado=creado;
+        const tempTodo = new Todo( tarea );
+
+        tempTodo.id         = id;
+        tempTodo.completado = completado;
+        tempTodo.creado     = creado;
 
         return tempTodo;
     }
 
-    constructor(tarea){
-        this.tarea=tarea;
-        
-        this.id=new Date().getTime();
-        this.completado=false;
-        this.creado=new Date();
+    constructor( tarea ) {
+
+        this.tarea = tarea;
+
+        this.id         = new Date().getTime(); // 12836871263
+        this.completado = false;
+        this.creado     = new Date();
+
+    }
+
+    imprimirClase() {
+        console.log(`${ this.tarea } - ${ this.id }`);
     }
 
 }

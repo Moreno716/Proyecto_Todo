@@ -7,7 +7,7 @@ export class TodoList{
     }
 
     nuevoTodo(todo){
-        this.todos.push(todo);
+        this.todos.push( todo );
         this.guardarLocalStorage();
     }
 
@@ -42,14 +42,10 @@ export class TodoList{
 
     cargarLocalStorage(){
 
-        this.todos = (localStorage.getItem('todo')) 
-                        ? JSON.parse(localStorage.getItem('todo')) 
-                        : [] ;
-        // if(localStorage.getItem('todo')){
-        //     this.todos= JSON.parse(localStorage.getItem('todo'));
-        // }else{
-        //     this.todos=[];
-        // }
+        this.todos = ( localStorage.getItem('todo') )
+                        ? JSON.parse( localStorage.getItem('todo') )
+                        : [];
+        
         this.todos = this.todos.map( Todo.fromJson );
 
     }
